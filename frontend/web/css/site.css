@@ -118,3 +118,8 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.select-table table td,
+.select-table table th {
+    padding: 10px;
+    border: 1px solid black;
+}

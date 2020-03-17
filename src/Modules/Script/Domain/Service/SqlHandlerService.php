@@ -10,8 +10,8 @@ class SqlHandlerService implements SqlHandlerServiceInterface
     private $isColumnCreate;
     private $fullRequest;
     private $sqlCommand;
-    public function __construct (string $fullRequest)
-    {
+
+    public function oldConstructor($fullRequest) {
         $isDatabaseCommand = preg_match('/database|databases/i', $fullRequest);
         if ($isDatabaseCommand) {
             throw new NotFoundHttpException('у меня тут только одна бд');
@@ -24,7 +24,7 @@ class SqlHandlerService implements SqlHandlerServiceInterface
     }
     public function send()
     {
-        $repo = new SqlHandlerRepository();
+        $repo = new SqlHandlerRepository();//в конуструтор зависимость от интерфейса
         $lowerSqlCommand = strtolower($this->sqlCommand);
         if ($lowerSqlCommand === 'select' ||  $lowerSqlCommand === 'show') {
             return $repo->sqlRequestIfSelect($this->fullRequest);

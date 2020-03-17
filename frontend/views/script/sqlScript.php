@@ -5,13 +5,13 @@ use yii\helpers\Html;
 $this->title = 'SQL Script';
 ?>
 
-<div class='select-table'><?= $model; ?></div>
-
-
 <h1><?=$this->title?></h1>
 <div class="script-form">
     <?= Html::beginForm('sql-script') ?>
     <?= Html::textarea('text') ?>
     <?= Html::submitButton('Run') ?>
     <?= Html::endForm(); ?>
+</div>
+<div class='select-table'>
+    <?= $model; ?>
 </div>

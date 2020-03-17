@@ -9,13 +9,13 @@ class SqlHandlerCommand
 {
     private $sendService;
     private $entity;
-    public function __construct(SqlHandlerServiceInterface $sendService, EntityInterface $entity)
+    public function __construct(SqlHandlerServiceInterface $sendService)
     {
         $this->sendService = $sendService;
-        $this->entity = $entity;
     }
-    public function execute()
+    public function execute($fullRequest)
     {
+        $this->sendService->oldConstructor($fullRequest);
         $sendResult = $this->sendService->send();
         $this->entity->addRecord();
         if ($sendResult[0] === 'select') {

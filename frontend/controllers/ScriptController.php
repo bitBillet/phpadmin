@@ -11,6 +11,15 @@ use src\Modules\Script\Domain\Entity\ScriptHistoryTableEntity;
 
 class ScriptController extends Controller
 {
+    /** @var SqlHandlerCommand */
+    private $sqlHandlerCommand;
+
+    public function __construct($id, $module, SqlHandlerCommand $command,  $config = [])
+    {
+        $this->sqlHandlerCommand = $command;
+        parent::__construct($id, $module, $config);
+    }
+
     public function actionSqlScript()
     {
         $model = null;
