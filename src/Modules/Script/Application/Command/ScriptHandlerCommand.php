@@ -3,7 +3,6 @@ namespace src\Modules\Script\Application\Command;
 
 use src\Core\Application\CommandInterface;
 use src\Modules\Script\Domain\Repository\ScriptHistoryRepository;
-use src\Modules\Script\Domain\Service\ScriptResponseService;
 use src\Modules\Script\Domain\Service\ScriptHandlerService;
 
 class ScriptHandlerCommand implements CommandInterface

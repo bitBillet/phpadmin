@@ -4,12 +4,9 @@
 namespace frontend\controllers;
 
 use src\Modules\Script\Application\Command\ScriptHistoryCommand;
-use src\Modules\Script\Domain\Repository\ScriptHandlerRepository;
-use src\Modules\Script\Domain\Service\ScriptHandlerService;
 use Yii;
 use yii\web\Controller;
 use src\Modules\Script\Application\Command\ScriptHandlerCommand;
-use src\Modules\Script\Domain\Repository\ScriptHistoryRepository;
 
 class ScriptController extends Controller
 {
